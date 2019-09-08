@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC 
+  		"-//OpenSymphony Group//XWork Validator 1.0.2//EN" 
+  		"http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+<validators>
+         <field name="empName">
+                           <field-validator type="requiredstring">
+                                        <param name="trim"></param>
+                                         <message>EmpName can not be blank</message>
+                           </field-validator>
+         </field>
+        
+        <field name="empAge">
+                         <field-validator type="required">
+                                    <message>EmpAge can not be blank</message>                         
+                         </field-validator>
+                           
+                           <field-validator type="int">
+                                           <param name="max">100</param>
+                                            <param name="min">1</param>
+                                            <message>Age must be between${min} and ${max}</message>
+                           </field-validator>
+         </field>
+        
+         <field name="empAddress">
+                        <field-validator type="requiredstring">
+                                     <param name="trim">true</param>
+                                      <message>EmpAddress can not be blank</message>
+                        </field-validator>
+                                  
+                        <field-validator type="stringlength">
+                            <param name="minLength">10</param>
+                             <param name="maxLength">15</param>
+                             <param name="trim">true</param>
+                             <message>Address not more than 15 character and not less than 10</message>
+                        </field-validator>          
+         </field>
+         <field name="empEmail">
+                            <field-validator type="email">
+                                     <message>Check the email formate</message>
+                            </field-validator>
+         </field> 
+          <field name="userName">
+                           <field-validator type="requiredstring">
+                                        <param name="trim"></param>
+                                         <message>userName can not be blank</message>
+                           </field-validator>
+         </field>
+          <field name="userPassword">
+                           <field-validator type="requiredstring">
+                                        <param name="trim"></param>
+                                         <message>userPassword can not be blank</message>
+                           </field-validator>
+         </field>
+          <field name="empDoj">
+                 <field-validator type="date">
+                           <param name="min">31/12/2010</param>
+                           <param name="max">31/01/2018</param>
+                             <message>Date of birth must between ${min} to ${max}</message>
+                 </field-validator>
+         </field>
+     <field name="empSalary">
+                  <field-validator type="double">
+                             <param name="minInclusive">50000.90</param>
+                             <param name="maxInclusive">60000.90</param>
+                             <message>	Salary between ${max} and ${min}</message>
+                  </field-validator>
+           </field>
+            <field name="empUrl">
+                        <field-validator type="url">
+                                  <message>Url must be correct</message>
+                        </field-validator>
+           </field>
+           <field name="empPincode">
+                 <field-validator type="required">
+                     <message>pincode should not be empty</message>
+                 </field-validator>
+           
+           </field>
+</validators>
